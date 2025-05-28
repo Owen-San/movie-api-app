@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="index.js" defer></script>
+    <title>Movie App</title>
+  </head>
+  <body>
+    <header class="nav__container">
+      <nav class="container nav">
+        <a href="#"
+          ><img src="./assets/tmdb_logo.svg" alt="Logo" class="logo"
+        /></a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="#" class="nav__link">Contact</a></li>
+          <li><a href="#" class="nav__link nav__link--primary">Search</a></li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+
+    <main id="search__movies">
+      <div class="container">
+        <h1 class="section__h1">Search for a Movie</h1>
+        <div class="search__wrapper">
+          <input
+            type="text"
+            class="movie__search"
+            placeholder="Search for a movie..."
+          />
+          <button class="search__btn">Search</button>
+        </div>
+        <div class="loading-wrapper">
+          <div id="loading" class="loading" style="display: none">
+            <i class="fas fa-spinner fa-spin"></i>
+          </div>
+        </div>
+        <div id="movie-results" class="movie__results"></div>
+        <p class="no-results">No movies found. Try another title.</p>
+      </div>
+    </main>
+    <hr />
+    <footer class="footer">
+      <div class="footer__container container">
+        <p class="footer__text">
+          &copy; 2025 Owen Movie App. All rights reserved.
+        </p>
+        <div class="footer__links">
+          <a
+            href="https://owen-san.github.io/Owen-Frontend-Portfolio/"
+            target="_blank"
+            >Portfolio</a
+          >
+          <a href="#">GitHub</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
