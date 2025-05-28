@@ -29,19 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderMovies(movies, container) {
     container.innerHTML = movies
-      .map(
-        (movie) => `
+      .map((movie) => {
+        const rating =
+          typeof movie.vote_average === "number"
+            ? movie.vote_average.toFixed(1)
+            : "N/A";
+        const poster = movie.poster_path
+          ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+          : `assets/no-img.png`;
+        return `
         <a href="movie.html?id=${movie.id}" class="movie-link">
           <div class="movie-card">
-            <img src="https://image.tmdb.org/t/p/w500${
-              movie.poster_path
-            }" alt="${movie.title}" />
+            <img src="${poster}" alt="${movie.title}" />
             <h3>${movie.title}</h3>
-            <p>⭐ ${movie.vote_average.toFixed(1)}</p>
+            <p>⭐ ${rating}</p>
           </div>
         </a>
-      `
-      )
+      `;
+      })
       .join("");
   }
 
