@@ -12,65 +12,152 @@
     <title>Movie App</title>
   </head>
   <body>
-    <section id="landing">
-      <div class="nav__container">
-        <nav>
-          <figure>
-            <a href="index.html"
-              ><img src="./assets/tmdb_logo.svg" alt="" class="logo"
-            /></a>
-          </figure>
-          <ul class="nav__links">
-            <a href=""><li class="nav__link">Home</li></a>
-            <a href=""><li class="nav__link">Contact</li></a>
-            <a href="search.html"
-              ><li class="nav__link nav__link--primary">Search</li></a
-            >
-          </ul>
-        </nav>
-      </div>
-    </section>
-    <hr />
+    <div class="page-wrapper">
+      <section id="landing">
+        <div class="nav__container">
+          <nav>
+            <figure>
+              <a href="index.html"
+                ><img src="./assets/tmdb_logo.svg" alt="" class="logo"
+              /></a>
+            </figure>
+            <!-- <ul class="nav__links">
+              <a href=""><li class="nav__link">Home</li></a> -->
+            <!-- <a href=""><li class="nav__link">Contact</li></a> -->
+            <!-- <a href="search.html"
+                ><li class="nav__link nav__link--primary">Search</li></a
+              >
+            </ul> -->
+          </nav>
+        </div>
+      </section>
+      <hr />
 
-    <section id="movies">
-      <div class="container">
-        <div class="row">
-          <h1 class="section__h1">Popular & Trending Movies</h1>
-          <div class="search__wrapper">
+      <div class="back-home__container">
+        <button id="back-to-home" style="display: none" onclick="goHome()">
+          ← Back to Home
+        </button>
+      </div>
+
+      <section id="search-bar">
+        <div class="search-bar__container">
+          <div class="search-bar__form">
             <input
               type="text"
-              class="movie__search"
+              class="search-bar__input"
               placeholder="Search for a movie"
             />
-            <button class="search__btn">Search</button>
+            <button class="search-bar__btn" aria-label="Search">
+              <i class="fas fa-search"></i>
+            </button>
           </div>
-          <div class="loading-wrapper">
-            <div id="loading" class="loading" style="display: none">
-              <i class="fas fa-spinner fa-spin"></i>
-            </div>
-          </div>
-          <div class="movie-list"></div>
+        </div>
+      </section>
+
+      <div class="loading-wrapper">
+        <div id="loading" class="loading" style="display: none">
+          <i class="fas fa-spinner fa-spin"></i>
         </div>
       </div>
-    </section>
-    <hr />
-    <section id="footer">
-      <footer class="footer">
-        <div class="footer__container">
-          <p class="footer__text">
-            &copy; 2025 Owen Movie App. All rights reserved.
-          </p>
-          <div class="footer__links">
-            <a
-              href="https://owen-san.github.io/Owen-Frontend-Portfolio/"
-              target="_blank"
-              >Portfolio</a
-            >
-            <a href="https://github.com/Owen-San" target="_blank">GitHub</a>
-            <a href="#">Contact</a>
+
+      <div id="content" style="display: none">
+        <section id="movies">
+          <div class="container">
+            <h1 class="section__h1">🔥 Trending Movies</h1>
+            <div class="movie-row-wrapper">
+              <button
+                class="scroll-btn scroll-left"
+                data-row="trending-movies"
+                data-direction="-1"
+              >
+                &#8249;
+              </button>
+              <div class="movie-row" id="trending-movies"></div>
+              <button
+                class="scroll-btn scroll-right"
+                data-row="trending-movies"
+                data-direction="1"
+              >
+                &#8250;
+              </button>
+            </div>
+
+            <h1 class="section__h1">🎬 Popular Movies</h1>
+            <div class="movie-row-wrapper">
+              <button
+                class="scroll-btn scroll-left"
+                data-row="popular-movies"
+                data-direction="-1"
+              >
+                &#8249;
+              </button>
+              <div class="movie-row" id="popular-movies"></div>
+              <button
+                class="scroll-btn scroll-right"
+                data-row="popular-movies"
+                data-direction="1"
+              >
+                &#8250;
+              </button>
+            </div>
+
+            <h1 class="section__h1">⭐ Top Rated Movies</h1>
+            <div class="movie-row-wrapper">
+              <button
+                class="scroll-btn scroll-left"
+                data-row="top-rated-movies"
+                data-direction="-1"
+              >
+                &#8249;
+              </button>
+              <div class="movie-row" id="top-rated-movies"></div>
+              <button
+                class="scroll-btn scroll-right"
+                data-row="top-rated-movies"
+                data-direction="1"
+              >
+                &#8250;
+              </button>
+            </div>
           </div>
+        </section>
+      </div>
+
+      <section id="search-results" style="display: none">
+        <div class="container">
+          <h1 class="section__h1" id="search-results-heading"></h1>
+          <div class="search-filter__container">
+            <label for="search-filter">Sort by:</label>
+            <select id="search-filter" class="search-filter">
+              <option value="title">Title (A-Z)</option>
+              <option value="rating">Rating (High → Low)</option>
+              <option value="date">Release Date (New → Old)</option>
+            </select>
+          </div>
+          <div id="search-movie-row" class="movie-row"></div>
         </div>
-      </footer>
-    </section>
+      </section>
+
+      <hr />
+
+      <section id="footer">
+        <footer class="footer">
+          <div class="footer__container">
+            <p class="footer__text">
+              &copy; 2025 Owen Movie App. All rights reserved.
+            </p>
+            <div class="footer__links">
+              <a
+                href="https://owen-san.github.io/Owen-Frontend-Portfolio/"
+                target="_blank"
+                >Portfolio</a
+              >
+              <a href="https://github.com/Owen-San" target="_blank">GitHub</a>
+              <a href="#">Contact</a>
+            </div>
+          </div>
+        </footer>
+      </section>
+    </div>
   </body>
 </html>

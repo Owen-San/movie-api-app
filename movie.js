@@ -31,6 +31,10 @@ function displayMovieDetails(movie) {
   `;
 }
 
+function goHome() {
+  window.location.href = "index.html";
+}
+
 function displayTrailer(videos) {
   const trailer = videos.find(
     (video) => video.type === "Trailer" && video.site === "YouTube"
