@@ -38,8 +38,15 @@ function displayTrailer(videos) {
   if (trailer) {
     trailerContainer.innerHTML = `
       <h2>Watch Trailer</h2>
-      <iframe width="100%" height="400" src="https://www.youtube.com/embed/${trailer.key}" 
-        frameborder="0" allowfullscreen></iframe>
+      <iframe 
+        width="100%" 
+        height="400" 
+        src="https://www.youtube-nocookie.com/embed/${trailer.key}?rel=0&modestbranding=1" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
     `;
   } else {
     trailerContainer.innerHTML = `<p>No trailer found.</p>`;
