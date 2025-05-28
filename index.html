@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <script src="index.js"></script>
+    <script src="index.js" defer></script>
     <title>Movie App</title>
   </head>
   <body>
@@ -12,7 +12,9 @@
       <div class="nav__container">
         <nav>
           <figure>
-            <a href="#"><img src="./assets/tmdb_logo.svg" alt="" class="logo" /></a>
+            <a href="#"
+              ><img src="./assets/tmdb_logo.svg" alt="" class="logo"
+            /></a>
           </figure>
           <ul class="nav__links">
             <a href=""><li class="nav__link">Home</li></a>
@@ -22,6 +24,24 @@
         </nav>
       </div>
     </section>
-    <hr>
+    <hr />
+
+    <section id="movies">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__h1">Popular & Trending Movies</h1>
+          <div class="search__wrapper">
+            <input
+              type="text"
+              class="movie__search"
+              placeholder="Search for a movie"
+            />
+            <button class="search__btn">Search</button>
+          </div>
+          <div class="movie-list"></div>
+        </div>
+      </div>
+    </section>
+    <hr />
   </body>
 </html>
